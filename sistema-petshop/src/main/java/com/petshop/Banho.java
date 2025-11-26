@@ -4,7 +4,7 @@ public class Banho extends Servico {
     private String produtoUtilizado;
 
     public Banho(String produtoUtilizado) {
-        super(id, nome, valor, horario, data, duracao, pet);
+        super(id, produtoUtilizado, valor, produtoUtilizado, produtoUtilizado, produtoUtilizado, pet);
         this.produtoUtilizado = produtoUtilizado;
     }
 

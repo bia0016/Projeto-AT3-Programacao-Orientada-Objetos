@@ -11,7 +11,6 @@ public class Funcionario extends Pessoa{
     private Double salario;
 
     public Funcionario(String cargo, Double salario) {
-        super(id, nome, telefone, email);
         this.cargo = cargo;
         this.salario = salario;
     }

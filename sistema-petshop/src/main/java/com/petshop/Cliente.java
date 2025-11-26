@@ -10,7 +10,7 @@ public class Cliente extends Pessoa{
     private String endereco;
 
     public Cliente(String endereco) {
-        super(id, nome, telefone, email);
+        super(id, endereco, endereco, endereco);
         this.endereco = endereco;
     }
 
