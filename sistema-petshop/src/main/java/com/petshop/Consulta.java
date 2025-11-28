@@ -28,7 +28,6 @@ public class Consulta extends Servico {
     
     @Override
     public void exibirServico(){
-        System.out.println("ID-Serviço: " + this.getId());
         System.out.println("Valor R$: " + this.getValor());
         System.out.println("Especialidade: " + this.especialidade);
         if(this.getMedicoVet() != null){

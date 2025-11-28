@@ -18,7 +18,6 @@ public class Tosa extends Servico{
 
     @Override
     public void exibirServico(){
-        System.out.println("ID-Serviço: " + this.getId());
         System.out.println("Valor R$: " + this.getValor());
         System.out.println("Tipo de tosa: " + this.tipoTosa);
         if(this.getPet() != null){

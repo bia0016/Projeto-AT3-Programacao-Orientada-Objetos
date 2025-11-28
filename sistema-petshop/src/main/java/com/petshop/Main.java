@@ -21,7 +21,6 @@ public class Main {
         System.out.println("ID-Funcionário gerado: " + f1.getId());
         
         do{
-
             System.out.println("**----== Bem-Vindo(a) ao PetShop ==----**");
             System.out.println("---- Por favor digite uma opção ----");
             System.out.println("1. Cadastrar cliente");
@@ -151,25 +150,6 @@ public class Main {
                         System.out.println("Espécie: " + a.getEspecie());
                         System.out.println("Raça: " + a.getRaca());
                         System.out.println("Dono: " + a.getDono());
-                        System.out.println("---------------------- == ----------------------");
-                    }
-                }
-                break;
-
-                case 6:
-                System.out.println("-- Visualizar serviços cadastrados --");
-                List<Servico> listaServicos = servicoDao.listAll();
-                if(listaServicos.isEmpty()) {
-                    System.out.println("Nenhum serviço cadastrado ainda.");
-                }else{
-                    for(Servico s : listaServicos){
-                        System.out.println("ID-Serviço: " + s.getId());
-                        System.out.println("Nome do serviço: " + s.getNome());
-                        System.out.println("Valor: " + s.getValor());
-                        System.out.println("Horário: " + s.getHorario());
-                        System.out.println("Data: " + s.getData());
-                        System.out.println("Duração: " + s.getDuracao());
-                        System.out.println("Pet: " + s.getPet());
                         System.out.println("---------------------- == ----------------------");
                     }
                 }

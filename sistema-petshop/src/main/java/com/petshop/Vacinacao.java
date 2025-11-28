@@ -18,7 +18,6 @@ public class Vacinacao extends Servico{
 
     @Override
     public void exibirServico(){
-        System.out.println("ID-Serviço: " + this.getId());
         System.out.println("Valor R$: " + this.getValor());
         System.out.println("Nome da vacina: " + this.nomeVacina);
         if(this.getPet() != null){
