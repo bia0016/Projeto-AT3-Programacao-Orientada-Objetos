@@ -105,6 +105,7 @@ public class Main {
                         String tipo = sc.nextLine();
                         Tosa tosa = new Tosa(tipo);
                         System.out.println("Serviço de Tosa cadastrado!");
+                        System.out.println("ID-Serviço-Tosa gerado: " + tosa.getId());
                         break;
                     case 3:
                         System.out.println("- Vacinação -");
@@ -112,6 +113,7 @@ public class Main {
                         String vacina = sc.nextLine();
                         Vacinacao vacinacao = new Vacinacao(vacina);
                         System.out.println("Serviço de Vacinação cadastrado!");
+                        System.out.println("ID-Serviço-Vacinação gerado: " + vacinacao.getId());
                         break;
                     case 4:
                         System.out.println("- Consulta -");
@@ -119,6 +121,7 @@ public class Main {
                         String especialidade = sc.nextLine();
                         Consulta consulta = new Consulta(especialidade, f1);
                         System.out.println("Consulta cadastrada!");
+                        System.out.println("ID-Serviço-Consulta gerado: " + consulta.getId());
                         System.out.println("ID-Vet: " + f1.getId() + " | Médico Veterinário: " + f1.getNome());
                         break;
                     default:
@@ -150,10 +153,11 @@ public class Main {
                     System.out.println("Nenhum pet cadastrado ainda.");
                 }else{
                     for(Animal a : listaAnimais){
-                        System.out.println("Nome do pet: ");
-                        System.out.println("Espécie: ");
-                        System.out.println("Raça: ");
-                        System.out.println("Dono: ");
+                        System.out.println("ID-Pet: " + a.getIdAnimal());
+                        System.out.println("Nome do pet: " + a.getNome());
+                        System.out.println("Espécie: " + a.getEspecie());
+                        System.out.println("Raça: " + a.getRaca());
+                        System.out.println("Dono: " + a.getDono());
                         System.out.println("---------------------- == ----------------------");
                     }
                 }
@@ -161,13 +165,21 @@ public class Main {
 
                 case 6:
                 System.out.println("-- Visualizar serviços cadastrados --");
-                System.out.println("Nome do serviço: ");
-                System.out.println("Valor: ");
-                System.out.println("Horário: ");
-                System.out.println("Data: ");
-                System.out.println("Duração: ");
-                System.out.println("Pet: ");
-                System.out.println("---------------------- == ----------------------");
+                List<Servico> listaServicos = servicoDao.listAll();
+                if(listaServicos.isEmpty()) {
+                    System.out.println("Nenhum serviço cadastrado ainda.");
+                }else{
+                    for(Servico s : listaServicos){
+                        System.out.println("ID-Serviço: " + s.getId());
+                        System.out.println("Nome do serviço: " + s.getNome());
+                        System.out.println("Valor: " + s.getValor());
+                        System.out.println("Horário: " + s.getHorario());
+                        System.out.println("Data: " + s.getData());
+                        System.out.println("Duração: " + s.getDuracao());
+                        System.out.println("Pet: " + s.getPet());
+                        System.out.println("---------------------- == ----------------------");
+                    }
+                }
                 break;
 
                 case 7:
@@ -201,9 +213,8 @@ public class Main {
 
         }while(opcao != 0);
 
-        // Close Hibernate resources
         HibernateUtil.shutdown();
-        
+        sc.close();
     }
 }
 
