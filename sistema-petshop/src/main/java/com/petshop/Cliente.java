@@ -4,13 +4,21 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("cliente")
+@DiscriminatorValue("tbl_cliente")
 
 public class Cliente extends Pessoa{
     private String endereco;
 
+    public Cliente(){}
+
     public Cliente(String endereco) {
-        super(id, endereco, endereco, endereco);
+        super(null, "", "", endereco);
+        this.endereco = endereco;
+    }
+
+    // Construtor completo para persistência com dados pessoais
+    public Cliente(String nome, String telefone, String email, String endereco) {
+        super(null, nome, telefone, email);
         this.endereco = endereco;
     }
 
@@ -24,6 +32,10 @@ public class Cliente extends Pessoa{
 
     @Override
     public void exibirInfo(){
+        System.out.println("ID: " + this.getId());
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Telefone: " + this.getTelefone());
+        System.out.println("Email: " + this.getEmail());
         System.out.println("Endereço: " + this.endereco);
     }
 }

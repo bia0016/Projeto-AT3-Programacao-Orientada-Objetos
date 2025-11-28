@@ -1,12 +1,27 @@
 package com.petshop;
 
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_servico")
 public abstract class Servico {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private Double valor;
     private String horario;
     private String data;
     private String duracao;
+    @ManyToOne
     private Animal pet;
 
     public abstract void exibirServico();
@@ -79,6 +94,6 @@ public abstract class Servico {
 
     @Override
     public String toString(){
-        return "ID: " + getId() + "\nNome: " + getNome() + "valor: " + getValor() + "Horário: " +  getHorario() + "Data: " + getData() + "Duração: " + getDuracao() + "Pet: " + getPet();
+        return "ID: " + getId() + "\nNome: " + getNome() + "Valor: " + getValor() + "Horário: " +  getHorario() + "Data: " + getData() + "Duração: " + getDuracao() + "Pet: " + getPet();
     }
 }

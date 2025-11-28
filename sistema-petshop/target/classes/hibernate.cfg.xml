@@ -18,5 +18,13 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping class="com.petshop.Pessoa"/>
+        <mapping class="com.petshop.Servico"/>
+        <mapping class="com.petshop.Animal"/>
+        <mapping class="com.petshop.Cliente"/>
+        <mapping class="com.petshop.Funcionario"/>
+        <mapping class="com.petshop.Banho"/>
+        <mapping class="com.petshop.Tosa"/>
+        <mapping class="com.petshop.Vacinacao"/>
+        <mapping class="com.petshop.Consulta"/>
         </session-factory>
 </hibernate-configuration>

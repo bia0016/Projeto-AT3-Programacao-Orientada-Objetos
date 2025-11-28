@@ -1,15 +1,35 @@
 package com.petshop;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+@DiscriminatorValue("tbl_animal")
 public class Animal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAnimal;
     private String nome;
     private String especie;
     private String raca;
-    //por @ManyToOne depois
+    @ManyToOne
     private Cliente dono;
+
+    protected Animal() {}
 
     public Animal(Integer idAnimal, String nome, String especie, String raca, Cliente dono) {
         this.idAnimal = idAnimal;
+        this.nome = nome;
+        this.especie = especie;
+        this.raca = raca;
+        this.dono = dono;
+    }
+
+    public Animal(String nome, String especie, String raca, Cliente dono) {
         this.nome = nome;
         this.especie = especie;
         this.raca = raca;
@@ -57,10 +77,15 @@ public class Animal {
     }
 
     public void exibirInfoPet(){
-        System.out.println("ID-Pet: " + this.idAnimal);
+        System.out.println("ID-Pet: " + this.getIdAnimal());
         System.out.println("Nome: " + this.nome);
         System.out.println("Espécie: " + this.especie);
         System.out.println("Raça: " + this.raca);
+        /*if(this.dono != null){
+            System.out.println("ID: " + ((Pessoa)this.dono).getId() " | Dono: " + ((Pessoa)this.dono).getNome());
+        }else{
+            System.out.println("Dono/Cliente não vinculado.");
+        }*/
         System.out.println("Dono: " + this.dono);
     }
 }

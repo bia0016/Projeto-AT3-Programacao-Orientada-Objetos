@@ -4,8 +4,8 @@ public class Consulta extends Servico {
     private String especialidade;
     private Funcionario medicoVet;
 
-
     public Consulta(String especialidade, Funcionario medicoVet) {
+        super(null, "", 0.0, "", "", "", null);
         this.especialidade = especialidade;
         this.medicoVet = medicoVet;
     }
@@ -28,7 +28,11 @@ public class Consulta extends Servico {
     
     @Override
     public void exibirServico(){
+        System.out.println("ID-Serviço: " + this.getId());
+        System.out.println("Valor R$: " + this.getValor());
         System.out.println("Especialidade: " + this.especialidade);
-        System.out.println("Médico veterinário: " + this.medicoVet);
+        if(this.getMedicoVet() != null){
+            System.out.println("ID-MédicoVet: " + this.medicoVet.getId() + " | Médico Veterinário: " + this.medicoVet.getNome());
+        }
     }
 }

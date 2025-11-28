@@ -4,12 +4,21 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("funcionario")
+@DiscriminatorValue("tbl_funcionario")
 
 public class Funcionario extends Pessoa{
     private String cargo;
     private Double salario;
 
+    public Funcionario() {}
+    
+    public Funcionario(String nome, String telefone, String email, String cargo, Double salario) {
+        super(null, nome, telefone, email);
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+
+    // Construtor antigo para compatibilidade
     public Funcionario(String cargo, Double salario) {
         this.cargo = cargo;
         this.salario = salario;
