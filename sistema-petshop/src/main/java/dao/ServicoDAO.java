@@ -32,15 +32,4 @@ public class ServicoDAO {
         }
     }
     
-    public void delete(Servico servico) {
-        Transaction tx = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            tx = session.beginTransaction();
-            session.remove(servico);
-            tx.commit();
-        } catch (Exception e) {
-            if (tx != null) tx.rollback();
-            e.printStackTrace();
-        }
-    }
 }

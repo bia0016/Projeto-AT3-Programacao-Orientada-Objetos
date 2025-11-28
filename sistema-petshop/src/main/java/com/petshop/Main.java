@@ -30,9 +30,6 @@ public class Main {
             System.out.println("4. Visualizar cliente cadastrado");
             System.out.println("5. Visualizar pet cadastrado");
             System.out.println("6. Visualizar serviço cadastrado");
-            System.out.println("7. Remover cliente");
-            System.out.println("8. Remover pet");
-            System.out.println("9. Remover serviço");
             System.out.println("0. Sair");
             opcao = sc.nextInt();
             sc.nextLine();
@@ -136,7 +133,7 @@ public class Main {
                     System.out.println("Nenhum cliente cadastrado ainda.");
                 }else{
                     for(Cliente c : listaClientes){
-                        System.out.println("ID: " + c.getId());
+                        System.out.println("ID-Cliente: " + c.getId());
                         System.out.println("Nome: " + c.getNome());
                         System.out.println("Telefone: " + c.getTelefone());
                         System.out.println("Email: " + c.getEmail());
@@ -180,27 +177,6 @@ public class Main {
                         System.out.println("---------------------- == ----------------------");
                     }
                 }
-                break;
-
-                case 7:
-                System.out.println("-- Remover Cliente --");
-                System.out.println("Endereço: ");
-                String enderecoRemove = sc.nextLine();
-                System.out.println("Cliente removido!");
-                break;
-
-                case 8:
-                System.out.println("-- Remover Pet --");
-                System.out.println("Nome do pet: ");
-                String nomePetRemove = sc.nextLine();
-                System.out.println("Pet removido!");
-                break;
-
-                case 9:
-                System.out.println("-- Remover Serviço --");
-                System.out.println("Nome do serviço: ");
-                String nomeServRemove = sc.nextLine();
-                System.out.println("Serviço removido!");
                 break;
 
                 case 0:

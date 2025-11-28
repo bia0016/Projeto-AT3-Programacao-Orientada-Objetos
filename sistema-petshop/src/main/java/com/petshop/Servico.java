@@ -26,6 +26,8 @@ public abstract class Servico {
 
     public abstract void exibirServico();
 
+    protected Servico(){}
+    
     public Servico(Integer id, String nome, Double valor, String horario, String data, String duracao, Animal pet) {
         this.id = id;
         this.nome = nome;

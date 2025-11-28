@@ -16,7 +16,6 @@ public class Cliente extends Pessoa{
         this.endereco = endereco;
     }
 
-    // Construtor completo para persistência com dados pessoais
     public Cliente(String nome, String telefone, String email, String endereco) {
         super(null, nome, telefone, email);
         this.endereco = endereco;

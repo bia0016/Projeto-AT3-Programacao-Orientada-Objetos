@@ -18,7 +18,6 @@ public class Funcionario extends Pessoa{
         this.salario = salario;
     }
 
-    // Construtor antigo para compatibilidade
     public Funcionario(String cargo, Double salario) {
         this.cargo = cargo;
         this.salario = salario;

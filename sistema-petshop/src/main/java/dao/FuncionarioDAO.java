@@ -1,9 +1,12 @@
 package dao;
 
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import com.petshop.Funcionario;
+
 import hibernateUtil.HibernateUtil;
 
 public class FuncionarioDAO {
@@ -29,5 +32,5 @@ public class FuncionarioDAO {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from Funcionario", Funcionario.class).list();
         }
-    }
+    }   
 }

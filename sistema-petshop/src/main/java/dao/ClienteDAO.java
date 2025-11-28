@@ -34,4 +34,5 @@ public class ClienteDAO {
             return session.createQuery("from Cliente", Cliente.class).list();
         }
     }
+    
 }

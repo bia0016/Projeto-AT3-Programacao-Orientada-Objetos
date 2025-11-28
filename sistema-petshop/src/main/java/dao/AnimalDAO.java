@@ -4,6 +4,8 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.petshop.Animal;
+import com.petshop.Cliente;
+
 import hibernateUtil.HibernateUtil;
 
 public class AnimalDAO {
@@ -31,4 +33,5 @@ public class AnimalDAO {
             return session.createQuery("from Animal", Animal.class).list();
         }
     }
+   
 }
