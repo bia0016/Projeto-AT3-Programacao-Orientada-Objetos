@@ -1,6 +1,6 @@
 package com.petshop;
-import java.util.Scanner;
 import java.util.List;
+import java.util.Scanner;
 
 import dao.AnimalDAO;
 import dao.ClienteDAO;
@@ -29,7 +29,6 @@ public class Main {
             System.out.println("3. Cadastrar serviço");
             System.out.println("4. Visualizar cliente cadastrado");
             System.out.println("5. Visualizar pet cadastrado");
-            System.out.println("6. Visualizar serviço cadastrado");
             System.out.println("0. Sair");
             opcao = sc.nextInt();
             sc.nextLine();
@@ -94,7 +93,7 @@ public class Main {
                         String produto = sc.nextLine();
                         Banho banho = new Banho(produto);
                         System.out.println("Serviço de Banho cadastrado!");
-                        System.out.println("ID-Serviço-Banho gerado: " + banho.getId());
+
                         break;
                     case 2:
                         System.out.println("- Tosa -");
@@ -102,7 +101,6 @@ public class Main {
                         String tipo = sc.nextLine();
                         Tosa tosa = new Tosa(tipo);
                         System.out.println("Serviço de Tosa cadastrado!");
-                        System.out.println("ID-Serviço-Tosa gerado: " + tosa.getId());
                         break;
                     case 3:
                         System.out.println("- Vacinação -");
@@ -110,7 +108,6 @@ public class Main {
                         String vacina = sc.nextLine();
                         Vacinacao vacinacao = new Vacinacao(vacina);
                         System.out.println("Serviço de Vacinação cadastrado!");
-                        System.out.println("ID-Serviço-Vacinação gerado: " + vacinacao.getId());
                         break;
                     case 4:
                         System.out.println("- Consulta -");
@@ -118,7 +115,6 @@ public class Main {
                         String especialidade = sc.nextLine();
                         Consulta consulta = new Consulta(especialidade, f1);
                         System.out.println("Consulta cadastrada!");
-                        System.out.println("ID-Serviço-Consulta gerado: " + consulta.getId());
                         System.out.println("ID-Vet: " + f1.getId() + " | Médico Veterinário: " + f1.getNome());
                         break;
                     default:
